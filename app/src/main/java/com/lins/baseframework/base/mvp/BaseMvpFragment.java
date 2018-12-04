@@ -5,16 +5,14 @@ import android.support.annotation.Nullable;
 
 public abstract class BaseMvpFragment<V, T extends BasePresenter<V>> extends BaseFragment {
     protected T mPresenter;
+
     protected abstract T initPresenter();
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
-        //允许为空，不是所有都要实现MVP模式
-        if (initPresenter() != null) {
-            mPresenter = initPresenter();
-            mPresenter.attachView((V) this);
-        }
         super.onCreate(savedInstanceState);
+        mPresenter = initPresenter();
+        mPresenter.attachView((V) this);
     }
 
     @Override
@@ -24,5 +22,8 @@ public abstract class BaseMvpFragment<V, T extends BasePresenter<V>> extends Bas
             mPresenter.detachView();
             mPresenter.detachDisposable();
         }
+        if (unbinder != null)
+            unbinder.unbind();
+
     }
 }

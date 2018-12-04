@@ -9,9 +9,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public abstract class BaseFragment extends Fragment {
-    public BaseActivity mContext;
+    protected BaseActivity mContext;
+    protected Unbinder unbinder;
 
     @LayoutRes
     public abstract int initLayoutResID();
@@ -37,7 +40,9 @@ public abstract class BaseFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(initLayoutResID(), container, false);
+        View view = inflater.inflate(initLayoutResID(), container, false);
+        unbinder = ButterKnife.bind(this, view);
+        return view;
     }
 
     @Override

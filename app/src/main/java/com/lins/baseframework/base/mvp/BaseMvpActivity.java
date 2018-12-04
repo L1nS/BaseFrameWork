@@ -25,6 +25,8 @@ public abstract class BaseMvpActivity<V, T extends BasePresenter<V>> extends Bas
             mPresenter.detachView();
             mPresenter.detachDisposable();
         }
+        if (unbinder != null)
+            unbinder.unbind();
     }
 
 }
