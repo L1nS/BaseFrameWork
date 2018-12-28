@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * Created by Admin on 2017/5/8.
  */
 
-public class Validator {
+public class MyValidator {
     public static boolean isEmpty(String Value) {
         return (Value == null || Value.trim().equals(""));
     }
@@ -26,7 +26,7 @@ public class Validator {
      * @return
      */
 //    public static boolean isUpdate(String v) {
-//        if (Validator.isEmpty(v))
+//        if (MyValidator.isEmpty(v))
 //            return false;
 //        boolean isUpdate = false;
 //        String[] versionName = AppHelper.getPackageVersionName().split("\\.");

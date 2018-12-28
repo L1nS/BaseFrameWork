@@ -1,8 +1,8 @@
 package com.lins.baseframework.utils.user;
 
 import android.content.Context;
+import com.lins.baseframework.utils.MyValidator;
 import com.lins.baseframework.utils.SharedPreUtils;
-import com.lins.baseframework.utils.Validator;
 
 
 /**
@@ -18,7 +18,7 @@ public class LoginHelper {
      */
     public static boolean isLogin(Context context) {
         String uid = SharedPreUtils.getValue(context, "uid", "");
-        if (Validator.isEmpty(uid))
+        if (MyValidator.isEmpty(uid))
             return false;
         else
             return true;

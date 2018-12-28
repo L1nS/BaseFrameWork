@@ -3,6 +3,7 @@ package com.lins.baseframework.base;
 import android.app.Application;
 import android.content.Context;
 import com.hjq.toast.ToastUtils;
+import com.lins.baseframework.utils.crash.CrashHandler;
 import com.lins.baseframework.utils.manager.MyActivityManager;
 import com.lins.baseframework.utils.okgo.OkGoUtil;
 import com.lins.baseframework.utils.user.LoginBean;
@@ -31,6 +32,7 @@ public class MyApp extends Application {
         ToastUtils.init(this);
         initUserData();
         Logger.addLogAdapter(new AndroidLogAdapter());
+        CrashHandler.getInstance().init(this);//初始化崩溃日志工具
     }
 
     public void initUserData() {

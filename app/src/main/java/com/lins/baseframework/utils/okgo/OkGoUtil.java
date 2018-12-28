@@ -4,8 +4,8 @@ import android.app.Application;
 import com.hjq.toast.ToastUtils;
 import com.lins.baseframework.base.Constants;
 import com.lins.baseframework.base.MyApp;
-import com.lins.baseframework.utils.DateUtils;
-import com.lins.baseframework.utils.Validator;
+import com.lins.baseframework.utils.MyDateUtils;
+import com.lins.baseframework.utils.MyValidator;
 import com.lins.baseframework.utils.okgo.exception.TokenException;
 import com.lzy.okgo.OkGo;
 import com.lzy.okgo.cache.CacheEntity;
@@ -97,8 +97,8 @@ public class OkGoUtil {
             params.put(key, val);
             linkedHashMap.put(key, val);
         }
-        params.put("_t", DateUtils.getCurTimeLong());
-        linkedHashMap.put("_t", String.valueOf(DateUtils.getCurTimeLong()));
+        params.put("_t", MyDateUtils.getCurTimeLong());
+        linkedHashMap.put("_t", String.valueOf(MyDateUtils.getCurTimeLong()));
         params.put("_sign", StringToMD5(linkedHashMap));
         return params;
     }
@@ -165,7 +165,7 @@ public class OkGoUtil {
             errorMsg = exception.getMessage();
             System.out.println(errorMsg);
         }
-        if (!Validator.isEmpty(errorMsg))
+        if (!MyValidator.isEmpty(errorMsg))
             ToastUtils.show(errorMsg);
     }
 }
