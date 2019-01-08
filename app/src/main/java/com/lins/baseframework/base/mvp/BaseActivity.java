@@ -8,7 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 import com.lins.baseframework.base.MyApp;
-import com.lins.baseframework.utils.screenUtils.StatusBarUtils;
+import com.lins.baseframework.utils.screenUtil.StatusBarUtil;
 
 public abstract class BaseActivity extends AppCompatActivity {
     protected Context mContext;
@@ -28,9 +28,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         ((MyApp) this.getApplication()).getActivityManager()
                 .pushActivity(this); // 将activity推入管理栈
         super.onCreate(savedInstanceState);
-        StatusBarUtils.statusBarTransparent(this);
-        StatusBarUtils.statusBarHide(this);
-        StatusBarUtils.statusBarTextColor(this, false);
+        StatusBarUtil.statusBarTransparent(this);
+        StatusBarUtil.statusBarHide(this);
+        StatusBarUtil.statusBarTextColor(this, false);
         setContentView(initLayoutResID());
         unbinder = ButterKnife.bind(this);
         mContext = this;

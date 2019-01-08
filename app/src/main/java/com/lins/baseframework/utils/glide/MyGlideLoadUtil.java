@@ -13,7 +13,7 @@ import com.bumptech.glide.Glide;
  * Glide 加载 简单判空封装 防止异步加载数据时调用Glide 抛出异常
  * Created by Li_Xavier on 2017/6/20 0020.
  */
-public class GlideLoadUtils {
+public class MyGlideLoadUtil {
     private String TAG = "ImageLoader";
 
     /**
@@ -22,14 +22,14 @@ public class GlideLoadUtils {
      * 方法第一次调用的时候才会被加载（实现了lazy），而且其加载过程是线程安全的。
      * 内部类加载的时候实例化一次instance。
      */
-    public GlideLoadUtils() {
+    public MyGlideLoadUtil() {
     }
 
     private static class GlideLoadUtilsHolder {
-        private final static GlideLoadUtils INSTANCE = new GlideLoadUtils();
+        private final static MyGlideLoadUtil INSTANCE = new MyGlideLoadUtil();
     }
 
-    public static GlideLoadUtils getInstance() {
+    public static MyGlideLoadUtil getInstance() {
         return GlideLoadUtilsHolder.INSTANCE;
     }
 

@@ -34,6 +34,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 
 public class OkGoUtil {
+
     public static void initOkGo(Application app) {
         //----------------------------------------------------------------------------------------//
 

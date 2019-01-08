@@ -2,6 +2,8 @@ package com.lins.baseframework.base;
 
 public class Constants {
 
+    public static final String FILE_PROVIDER = "com.lins.exandroid.fileprovider";
+
     //用户信息存放文件
     public static String USER_SP = "userSP";
     //下载文件保存路径

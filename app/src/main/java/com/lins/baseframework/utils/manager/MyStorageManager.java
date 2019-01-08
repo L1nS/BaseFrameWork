@@ -11,7 +11,7 @@ import java.io.File;
 /**
  * 文件路径管理类
  */
-public class StorageManager {
+public class MyStorageManager {
 
     /**
      * 大容量存储的QQTY根目录

@@ -13,7 +13,7 @@ import android.util.Log;
 import android.widget.Toast;
 import com.lins.baseframework.utils.MyDateUtils;
 import com.lins.baseframework.utils.MyFileUtils;
-import com.lins.baseframework.utils.manager.StorageManager;
+import com.lins.baseframework.utils.manager.MyStorageManager;
 
 import java.io.*;
 import java.lang.reflect.Field;
@@ -217,7 +217,7 @@ public class CrashHandler implements Thread.UncaughtExceptionHandler {
     }
 
     public static String getGlobalpath() {
-        return StorageManager.getCrashDir()
+        return MyStorageManager.getCrashDir()
                 + File.separator + "crash" + File.separator;
     }
 

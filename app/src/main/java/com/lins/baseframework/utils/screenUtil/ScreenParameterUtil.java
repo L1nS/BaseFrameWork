@@ -1,4 +1,4 @@
-package com.lins.baseframework.utils.screenUtils;
+package com.lins.baseframework.utils.screenUtil;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,7 +11,7 @@ import android.view.Display;
 import android.view.WindowManager;
 import com.lins.baseframework.base.MyApp;
 
-public class ScreenParameterUtils {
+public class ScreenParameterUtil {
 
     // 屏幕像素点
     private static final Point screenSize = new Point();

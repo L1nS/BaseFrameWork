@@ -1,4 +1,4 @@
-package com.lins.baseframework.utils.screenUtils;
+package com.lins.baseframework.utils.screenUtil;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -12,7 +12,7 @@ import com.lins.baseframework.R;
 
 import java.lang.reflect.Field;
 
-public class StatusBarUtils {
+public class StatusBarUtil {
 
     /**
      * 解决沉浸式状态栏变灰问题
@@ -80,7 +80,7 @@ public class StatusBarUtils {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
             FrameLayout.LayoutParams lp = (FrameLayout.LayoutParams) view.getLayoutParams();
             lp.width = FrameLayout.LayoutParams.MATCH_PARENT;
-            lp.height = ScreenParameterUtils.getStatusBarHeight2(activity) + ScreenParameterUtils.topx(activity, 48);
+            lp.height = ScreenParameterUtil.getStatusBarHeight2(activity) + ScreenParameterUtil.topx(activity, 48);
             view.setLayoutParams(lp);
         }
     }
