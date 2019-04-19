@@ -16,7 +16,7 @@ public class MakeUtils {
 
 
     private static final String XML_BASE_DPI = "<dimen name=\"base_dpi\">%ddp</dimen>\r\n";
-    private  static final int MAX_SIZE = 720;
+    private static final int MAX_SIZE = 720;
 
     /**
      * 生成的文件名
@@ -24,8 +24,8 @@ public class MakeUtils {
     private static final String XML_NAME = "dimens.xml";
 
 
-    public static float px2dip(float pxValue, int sw,int designWidth) {
-        float dpValue =   (pxValue/(float)designWidth) * sw;
+    public static float px2dip(float pxValue, int sw, int designWidth) {
+        float dpValue = (pxValue / (float) designWidth) * sw;
         BigDecimal bigDecimal = new BigDecimal(dpValue);
         float finDp = bigDecimal.setScale(2, BigDecimal.ROUND_HALF_UP).floatValue();
         return finDp;
@@ -50,8 +50,8 @@ public class MakeUtils {
             sb.append(temp);
             for (int i = 0; i <= MAX_SIZE; i++) {
 
-                dpValue = px2dip((float) i,type.getSwWidthDp(),designWidth);
-                temp = String.format(XML_DIMEN_TEMPLETE,"", i, dpValue);
+                dpValue = px2dip((float) i, type.getSwWidthDp(), designWidth);
+                temp = String.format(XML_DIMEN_TEMPLETE, "", i, dpValue);
                 sb.append(temp);
             }
 
@@ -64,12 +64,11 @@ public class MakeUtils {
     }
 
 
-
     /**
      * 生成的目标文件夹
      * 只需传宽进来就行
      *
-     * @param type 枚举类型
+     * @param type     枚举类型
      * @param buildDir 生成的目标文件夹
      */
     public static void makeAll(int designWidth, DimenTypes type, String buildDir) {
@@ -79,20 +78,22 @@ public class MakeUtils {
             if (type.getSwWidthDp() > 0) {
                 //适配Android 3.2+
                 folderName = "values-sw" + type.getSwWidthDp() + "dp";
-            }else {
+            } else {
                 return;
             }
+            //在mac下生成目标目录
+            String home = System.getProperty("user.home");
+            File file = new File(home + File.separator + "Desktop" + File.separator + buildDir + File.separator + folderName);
 
-            //生成目标目录
-            File file = new File(buildDir + File.separator + folderName);
+            //windows下生成目标目录
+//            File file = new File(buildDir + File.separator + folderName);
             if (!file.exists()) {
                 file.mkdirs();
             }
-
             //生成values文件
             FileOutputStream fos = new FileOutputStream(file.getAbsolutePath() + File.separator + XML_NAME);
             System.out.print(file.getAbsolutePath() + File.separator + XML_NAME);
-            fos.write(makeAllDimens(type,designWidth).getBytes());
+            fos.write(makeAllDimens(type, designWidth).getBytes());
             fos.flush();
             fos.close();
 

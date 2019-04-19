@@ -39,4 +39,16 @@ public abstract class BaseActivity extends AppCompatActivity {
         initView();
         initLoad();
     }
+
+    protected void finishThis() {
+        MyApp.getInstance().getActivityManager().finishThis();
+    }
+
+    @Override
+    protected void onDestroy() {
+        // 销毁时activity出栈
+        ((MyApp) this.getApplication()).getActivityManager()
+                .popActivity(this);
+        super.onDestroy();
+    }
 }
