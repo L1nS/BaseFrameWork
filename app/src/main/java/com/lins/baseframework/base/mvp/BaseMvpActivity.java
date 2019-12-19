@@ -1,7 +1,8 @@
 package com.lins.baseframework.base.mvp;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
+
+import androidx.annotation.Nullable;
 
 public abstract class BaseMvpActivity<V, T extends BasePresenter<V>> extends BaseActivity {
     protected T mPresenter;

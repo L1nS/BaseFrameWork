@@ -1,7 +1,9 @@
 package com.lins.baseframework.ui;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.lins.baseframework.R;
 
 public class TempActivity extends AppCompatActivity {

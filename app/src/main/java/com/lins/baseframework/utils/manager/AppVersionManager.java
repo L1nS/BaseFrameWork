@@ -6,7 +6,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
-import android.support.v4.content.FileProvider;
+import androidx.core.content.FileProvider;
 import com.hjq.toast.ToastUtils;
 import com.lins.baseframework.base.Constants;
 import com.lins.baseframework.base.MyApp;

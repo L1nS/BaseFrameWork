@@ -4,9 +4,11 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.os.Build;
-import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.widget.ImageView;
+
+import androidx.fragment.app.Fragment;
+
 import com.bumptech.glide.Glide;
 
 /**

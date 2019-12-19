@@ -35,6 +35,11 @@ public class MainActivity extends BaseMvpActivity {
     }
 
     @Override
+    public void initListener() {
+
+    }
+
+    @Override
     public void initLoad() {
 
     }
